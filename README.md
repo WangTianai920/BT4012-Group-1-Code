@@ -58,21 +58,6 @@ The notebook should produce **47,820 training rows** and **11,956 test rows**, w
 
 The protocol preserves the original full-sample constant and sparsity screening before the holdout split. Imputation, power transforms and scaling are fitted on the outer training split. Internal cross-validation and validation reuse that preprocessing, so those scores are exploratory. The random holdout has an imposed phishing prevalence of 5.13%. Its metrics describe that evaluation setting and may vary slightly across platforms and library builds.
 
-### Verified default run
-
-The notebook ran end to end on macOS arm64 with Python 3.12.10. It reproduced the train/test labels and all five engineered features exactly. Regenerated continuous values differed from the team's saved files by at most 0.000001. Compared with the original model notebook, holdout ROC-AUC differed by at most 0.00004 across the six models. The largest difference among the original threshold-based test metrics was 0.33 percentage points (Random Forest recall).
-
-| Model | Test ROC-AUC | Test average precision | Test F1 |
-| --- | ---: | ---: | ---: |
-| XGBoost | 0.99452 | 0.93804 | 0.85440 |
-| LightGBM | 0.99452 | 0.93991 | 0.85640 |
-| Weighted Ensemble | 0.99384 | 0.93852 | 0.85150 |
-| Random Forest | 0.99253 | 0.92380 | 0.84401 |
-| Neural Network | 0.98917 | 0.89150 | 0.81950 |
-| Logistic Regression | 0.97996 | 0.78552 | 0.56906 |
-
-Both optional stages were verified separately. The 75- and 72-feature rankings each reproduced the original baseline average precision of 0.910551. All 72 per-feature AP changes matched the saved ranking workbook within floating-point precision. The four randomized searches recovered all original winning hyperparameters and matched the reported cross-validation ROC-AUC to six decimal places.
-
 ## Data source
 
 Grega Vrbančič (2020), *Phishing Websites Dataset*, Version 1, Mendeley Data, CC BY 4.0. The notebook uses the full variant with 88,647 observations and 111 input features. [Dataset record](https://doi.org/10.17632/72ptz43s9v.1)
