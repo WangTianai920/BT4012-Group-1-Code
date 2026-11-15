@@ -71,6 +71,8 @@ The notebook ran end to end on macOS arm64 with Python 3.12.10. It reproduced th
 | Neural Network | 0.98917 | 0.89150 | 0.81950 |
 | Logistic Regression | 0.97996 | 0.78552 | 0.56906 |
 
+Both optional stages were verified separately. The 75- and 72-feature rankings each reproduced the original baseline average precision of 0.910551. All 72 per-feature AP changes matched the saved ranking workbook within floating-point precision. The four randomized searches recovered all original winning hyperparameters and matched the reported cross-validation ROC-AUC to six decimal places.
+
 ## Data source
 
 Grega Vrbančič (2020), *Phishing Websites Dataset*, Version 1, Mendeley Data, CC BY 4.0. The notebook uses the full variant with 88,647 observations and 111 input features. [Dataset record](https://doi.org/10.17632/72ptz43s9v.1)
