@@ -28,7 +28,7 @@ In JupyterLab, use the Python 3 kernel from the new environment and select **Res
 python -m nbconvert --execute --to notebook --inplace BT4012_Group_1.ipynb --ExecutePreprocessor.timeout=7200
 ```
 
-The notebook downloads the pinned `dataset_full.csv` into `data/` on the first run and verifies its SHA-256 checksum. For offline use after dependencies are installed, save the [exact source CSV](https://raw.githubusercontent.com/GregaVrbancic/Phishing-Dataset/19674806813c1205d8c12bae99c15c5a735a4ac9/dataset_full.csv) as `data/dataset_full.csv` before running. The verified checksum is `87da36a20c8c1a9d13db5899514071907179c0fe790dc2ea4f0811957d68745d`.
+The original [`dataset_full.csv`](data/dataset_full.csv) is included in the repository. Run the notebook from the repository root. It checks the file’s SHA-256 checksum before loading it, and can run offline after you install the dependencies.
 
 ### Replay feature ranking and hyperparameter search
 
@@ -60,4 +60,4 @@ The protocol preserves the original full-sample constant and sparsity screening 
 
 ## Data source
 
-Grega Vrbančič (2020), *Phishing Websites Dataset*, Version 1, Mendeley Data, CC BY 4.0. The notebook uses the full variant with 88,647 observations and 111 input features. [Dataset record](https://doi.org/10.17632/72ptz43s9v.1)
+Grega Vrbančič (2020), *Phishing Websites Dataset*, Version 1, Mendeley Data, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The bundled CSV is the unmodified full variant with 88,647 observations and 111 input features. [Dataset record](https://doi.org/10.17632/72ptz43s9v.1)
